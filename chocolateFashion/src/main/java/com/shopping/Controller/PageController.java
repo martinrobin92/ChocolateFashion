@@ -9,8 +9,22 @@ public class PageController {
 @RequestMapping(value= {"/","home"})
 	public ModelAndView index() {
 		ModelAndView view = new ModelAndView("page");
-		view.addObject("greet", "Hello welcome to jsp");
+		view.addObject("title", "Chocolate Home");
+		view.addObject("userClickHome", true);
 		return view;
 	}
-	
+@RequestMapping(value= "/about")
+public ModelAndView about() {
+	ModelAndView view = new ModelAndView("page");
+	view.addObject("title", "About Us");
+	view.addObject("userClickAbout", true);
+	return view;
+}
+@RequestMapping(value= "/contacts")
+public ModelAndView contacts() {
+	ModelAndView view = new ModelAndView("page");
+	view.addObject("title", "Contact Us");
+	view.addObject("userClickContacts", true);
+	return view;
+}
 }

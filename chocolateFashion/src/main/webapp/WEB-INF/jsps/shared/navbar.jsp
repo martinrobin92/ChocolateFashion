@@ -16,18 +16,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" id="home" href="./home">Home
+              <a class="nav-link" id="home" href="${contextRoot}/home">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item" id="about">
               <a class="nav-link" href="${contextRoot}/about">About</a>
             </li>
-            <li class="nav-item" id="listproducts">
-              <a class="nav-link" href="${contextRoot}/listproducts">View Products</a>
-            </li>
+            
             <li class="nav-item" id="contact">
               <a class="nav-link" href="${contextRoot}/contacts">Contact</a>
+            </li>
+         
+         <li class="nav-item" id="listproducts">
+              <a class="nav-link" href="${contextRoot}/show/all/products">View Products</a>
             </li>
           </ul>
         </div>

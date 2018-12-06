@@ -3,7 +3,7 @@
     <%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
     <c:set var="contextRoot" value="${pageContext.request.contextPath}"/>
-    
+    <!-- Mapping The Static Resources Css Js  -->
     <spring:url var="css" value="/assets/css"/>
     <spring:url var="js" value="/assets/js"/>
     <spring:url var="images" value="/assets/images"/>
@@ -47,6 +47,11 @@
 
 <c:if test="${userClickAbout == true }">
    <%@include file="about.jsp" %>
+       <!-- /.container -->
+</c:if>
+
+<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+   <%@include file="listproducts.jsp" %>
        <!-- /.container -->
 </c:if>
 

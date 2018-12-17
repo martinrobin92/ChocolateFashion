@@ -2,7 +2,7 @@ package com.shopping.shoppingBackend.config;
 
 import java.util.Properties;
 
-import javax.activation.DataSource;
+import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -26,7 +26,7 @@ public class HibernateConfig {
 	
 	//DATASOURCE BEAN
 	@Bean
-	private DataSource getDataSource() {
+	public DataSource getDataSource() {
 		
 		//Providing Database Information //
 		BasicDataSource datasource = new BasicDataSource();
@@ -34,7 +34,7 @@ public class HibernateConfig {
 		datasource.setUrl(DATABASE_URL);
 		datasource.setUsername(DATABASE_USERNAME);
 		datasource.setPassword(DATABASE_PASSWORD);
-		return (DataSource) datasource;
+		return  datasource;
 		
 		
 	}
@@ -42,7 +42,7 @@ public class HibernateConfig {
 	//SESSION FACTORY BEAN
 	@Bean
 	public SessionFactory getSessionFactory(DataSource dataSource) {
-		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder((javax.sql.DataSource) dataSource);
+		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		builder.addProperties(getHibernateProperties());
 		
 		builder.scanPackages("com.shopping.shoppingBackend.dto");
@@ -57,7 +57,7 @@ public class HibernateConfig {
 		
 		prop.put("hibernate.dialect", DATABASE_DIALECT);
 		prop.put("hibernate.show_sql", "true");
-		prop.put("hibernate.hbm2ddl.auto", "create");
+		prop.put("hibernate.hbm2ddl.auto", "update");
 		return prop;
 	}
 	

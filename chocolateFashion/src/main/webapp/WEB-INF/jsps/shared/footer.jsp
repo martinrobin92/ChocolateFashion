@@ -7,12 +7,17 @@
 <title></title>
 </head>
 <body>
+<div class="row">
+<div class="col-md-12">
 <footer class="py-5 bg-dark">
       <div class="container">
+
         <p class="m-0 text-center text-white">Copyright &copy; Chocolate Fashion 2018</p>
       </div>
+      
       <!-- /.container -->
     </footer>
-
+    </div>
+</div>
 </body>
 </html>
